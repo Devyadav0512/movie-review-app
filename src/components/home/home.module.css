@@ -1,0 +1,43 @@
+.homeDiv {
+    width: 100vw;
+    display: flex;
+    background-color: #e3e8ec;
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+}
+
+.divHeader {
+    color: black;
+}
+
+.divDropDown {
+    margin-left: 20px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.divButtonGroup {
+    display: flex;
+}
+
+.divButton1 {
+    border: 1px solid #b6b4f0;
+    border-radius: 5px;
+    color: #6559f5;
+    margin-right: 20px;
+    width: 150px;
+    height: 40px;
+}
+
+.divButton2 {
+    border: 1px solid #6559f5;
+    border-radius: 5px;
+    background-color: #6559f5;
+    width: 150px;
+    height: 40px;
+    color: white;
+}
