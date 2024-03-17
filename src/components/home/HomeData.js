@@ -26,7 +26,11 @@ function HomeData({ screenName }) {
         <input
           className={styles.homeDataInputSearch}
           name="movie"
-          placeholder="Search for your favourite movie"
+          placeholder={
+            screenName == "movie"
+              ? "Search for your favourite movie"
+              : "Search for movie review"
+          }
           value={searchMovie}
           onChange={(e) => {
             updateMovieResult(e);

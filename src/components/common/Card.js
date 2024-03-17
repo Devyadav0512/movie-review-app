@@ -1,21 +1,21 @@
-// import { useState } from "react";
+// @ts-nocheck
 import styles from "./common.module.css";
 
 function Card({ data }) {
-  let { movieName, releaseDate, ratings, comment, reviewerName, cardType } =
+  let { movieName, releaseDate, ratings, comments, reviewerName, cardType } =
     data;
 
   return (
     <div className={styles.cardMainDiv}>
       <div className={styles.cardDiv1}>
         <h1 className={styles.cardHeader}>
-          {cardType == "movie" ? movieName : comment}
+          {cardType == "movie" ? movieName : comments}
         </h1>
         <h1 className={styles.cardText1}>
-          Released: {cardType == "movie" ? releaseDate : ""}
+          {cardType == "movie" ? `Released: ${releaseDate}` : ""}
         </h1>
         <h1 className={styles.cardText2}>
-          Rating: {cardType == "movie" ? ratings : reviewerName}
+          {cardType == "movie" ? `Rating: ${ratings}` : `By ${reviewerName}`}
         </h1>
       </div>
       <div className={styles.cardDiv2}>

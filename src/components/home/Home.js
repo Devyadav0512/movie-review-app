@@ -2,9 +2,22 @@
 import { useState } from "react";
 import styles from "./home.module.css";
 import HomeData from "./HomeData";
+import Form from "../common/Form";
 
 function Home() {
   const [screenName, setScreenName] = useState("movie");
+  const [form, setShowForm] = useState(false);
+  const [formType, setFormType] = useState("");
+
+  const showForm = (type) => {
+    setShowForm(true);
+    setFormType(type);
+  };
+
+  const hideForm = () => {
+    setShowForm(false);
+    setFormType("");
+  };
 
   const changeScreen = (e) => {
     setScreenName(e.target.value);
@@ -12,6 +25,7 @@ function Home() {
 
   return (
     <>
+      {form && <Form hideForm={hideForm} type={formType} />}
       <div className={styles.homeDiv}>
         <div className={styles.divHeader}>
           MOVIECRITIC
@@ -32,8 +46,22 @@ function Home() {
           </select>
         </div>
         <div className={styles.divButtonGroup}>
-          <button className={styles.divButton1}>Add new movie</button>
-          <button className={styles.divButton2}>Add new review</button>
+          <button
+            onClick={() => {
+              showForm("movie");
+            }}
+            className={styles.divButton1}
+          >
+            Add new movie
+          </button>
+          <button
+            onClick={() => {
+              showForm("review");
+            }}
+            className={styles.divButton2}
+          >
+            Add new review
+          </button>
         </div>
       </div>
       <HomeData screenName={screenName} />

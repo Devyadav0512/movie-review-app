@@ -8,7 +8,6 @@ type allMoviesOutput = RouterOutputs['reviews']['all'];
 export type Review = allMoviesOutput[number]; 
 
 export const reviewInput = z.object({
-    reviewId: z.string(),
     movieId: z.string(),
     reviewerName: z.string(),
     comments: z.string(),

@@ -62,7 +62,7 @@ export const moviesRouter = createTRPCRouter({
   }),
 
   create: publicProcedure.input(movieInput).mutation(async ({ ctx, input }) => {
-    return ctx.db.movie.create(input)
+    return ctx.db.movie.create({ data : input})
   }),
 
   delete: publicProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
@@ -72,7 +72,7 @@ export const moviesRouter = createTRPCRouter({
       }
     })
 
-    return ctx.db.review.delete({
+    return ctx.db.review.deleteMany({
       where : {
         movieId: input
       }

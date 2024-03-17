@@ -54,7 +54,7 @@ export const reviewsRouter = createTRPCRouter({
   }),
 
   create: publicProcedure.input(reviewInput).mutation(async ({ ctx, input }) => {
-    return ctx.db.movie.create(input)
+    return ctx.db.review.create({ data: input })
   }),
 
   delete: publicProcedure.input(z.string()).mutation(async ({ ctx, input }) => {

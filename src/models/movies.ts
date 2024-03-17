@@ -8,8 +8,8 @@ type allMoviesOutput = RouterOutputs['movies']['all'];
 export type Movie = allMoviesOutput[number]; 
 
 export const movieInput = z.object({
-    movieId: z.string(),
     name: z.string(),
     releaseDate: z.string(),
-    ratings: z.number()
+    ratings: z.number(),
+    totalRatings: z.number()
 })
